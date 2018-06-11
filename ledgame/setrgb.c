@@ -47,39 +47,38 @@ int setrgb()
 
   if (color == 0)
     {
-    digitalWrite(GLED_GPIO, LOW);
+    digitalWrite(GLED_GPIO, HIGH);
     digitalWrite(BLED_GPIO, LOW);
     digitalWrite(RLED_GPIO, HIGH);
-    for(int i=0; i<50; i++) { }
-    digitalWrite(RLED_GPIO, LOW);
-    digitalWrite(GLED_GPIO, HIGH);
-    for(int i=0; i<49; i++) { }
+    //for(int i=0; i<50; i++) { }
+    //digitalWrite(RLED_GPIO, LOW);
+    //digitalWrite(GLED_GPIO, HIGH);
+//    for(int i=0; i<49; i++) { }
     } else if(color == 1)
     {
     digitalWrite(GLED_GPIO, LOW);
     digitalWrite(BLED_GPIO, LOW);
     digitalWrite(RLED_GPIO, HIGH);
-    for(int i=0; i<50; i++) { }
-    digitalWrite(RLED_GPIO, LOW);
-    for(int i=0; i<49; i++) { }
+//    for(int i=0; i<50; i++) { }
+//    digitalWrite(RLED_GPIO, LOW);
+//    for(int i=0; i<49; i++) { }
     } else if (color == 2)
     {
     digitalWrite(GLED_GPIO, LOW);
     digitalWrite(RLED_GPIO, LOW);
     digitalWrite(BLED_GPIO, HIGH);
-    for(int i=0; i<50; i++) { }
-    digitalWrite(BLED_GPIO, LOW);
-    for(int i=0; i<49; i++) { }
+//    for(int i=0; i<50; i++) { }
+//    digitalWrite(BLED_GPIO, LOW);
+//    for(int i=0; i<49; i++) { }
     } else if (color == 3)
     {
     digitalWrite(RLED_GPIO, LOW);
     digitalWrite(BLED_GPIO, LOW);
     digitalWrite(GLED_GPIO, HIGH);
-    for(int i=0; i<50; i++) { }
-    digitalWrite(GLED_GPIO, LOW);
-    for(int i=0; i<49; i++) { }
+//    for(int i=0; i<50; i++) { }
+//    digitalWrite(GLED_GPIO, LOW);
+//    for(int i=0; i<49; i++) { }
     }
-
 
 
   return 0;

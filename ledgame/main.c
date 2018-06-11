@@ -18,7 +18,6 @@
 int main(int argc, char* argv[]) {
 
   //set "button" to input from PHP
-  color = 2; //random from setrgb
 
   button = sscanf(argv[1], "%d", &button);
 
@@ -29,7 +28,6 @@ int main(int argc, char* argv[]) {
     }
 
   button = atoi(argv[1]);
-  printf("Button: %d\n", button);
 
   wiringPiSetupGpio();
   pinMode(YELLOW_GPIO, OUTPUT);
@@ -45,19 +43,19 @@ int main(int argc, char* argv[]) {
 
     //light LED
     if(button == 0) {
-      printf("light up yellow\n");
+      //printf("light up yellow\n");
       digitalWrite(YELLOW_GPIO, HIGH);
     }
     if(button == 1) {
-      printf("light up red\n");
+      //printf("light up red\n");
       digitalWrite(RED_GPIO, HIGH);
     }
     if(button == 2) {
-      printf("light up blue\n");
+      //printf("light up blue\n");
       digitalWrite(BLUE_GPIO, HIGH);
     }
     if(button == 3) {
-      printf("light up green\n");
+      //printf("light up green\n");
       digitalWrite(GREEN_GPIO, HIGH);
     }
 
@@ -66,15 +64,17 @@ int main(int argc, char* argv[]) {
       //correct
       score = score + 1;
       writetempfile();
-      printf("Correct! Score: %d\n", score);
-      //setrgb();
+      printf("start\n");
+      printf("%d\n", score);
+      setrgb();
     }
     else {
       //incorrect
       readtempfile();
-      printf("Game Over Score: %d\n", score);
-      remove(".tempfile");
-      //endgame();
+      printf("end\n");
+      printf("%d\n", score);
+      //remove(".tempfile");
+      endgame();
     }
 
   }
@@ -83,15 +83,17 @@ int main(int argc, char* argv[]) {
     //start
     score = 0;
     writetempfile();
-    printf("Start\n");
+    printf("start\n");
+    printf("%d\n", score);
     setrgb();
   }
 
   else if(button == 5) {
     //end
-   // readtempfile();
-   // printf("Game Over! Score: %d\n", score);
-   // remove(".tempfile");
+    readtempfile();
+    printf("end\n");
+    printf("%d\n", score);
+    //remove(".tempfile");
     endgame();
 
   }
