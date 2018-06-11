@@ -23,7 +23,7 @@ int endgame() {
   pinMode(GREEN_GPIO, OUTPUT);
 
 
-  digitalWrite(BLED_GPIO, LOW);   
+  digitalWrite(BLED_GPIO, LOW);
   digitalWrite(GLED_GPIO, LOW);
   digitalWrite(RLED_GPIO, LOW);
   digitalWrite(YELLOW_GPIO, LOW);
@@ -31,6 +31,9 @@ int endgame() {
   digitalWrite(GREEN_GPIO, LOW);
   digitalWrite(BLUE_GPIO, LOW);
 
+  readtempfile();
+  printf("end\n");
+  printf("%d\n", score);
 
   return 0;
 }
