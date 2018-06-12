@@ -15,19 +15,18 @@
 //4 start
 //5 end
 
+int button;
+int color;
+int score;
+
 int main(int argc, char* argv[]) {
 
   //set "button" to input from PHP
 
-  button = sscanf(argv[1], "%d", &button);
+  sscanf(argv[1], "%d", &button);
 
-    if (button != 1)
-    {
-      printf("ERROR: arg is not an int\n");
-      return 1;
-    }
-
-  button = atoi(argv[1]);
+//  button = atoi(argv[1]);
+//  printf("%d\n", button);
 
   wiringPiSetupGpio();
   pinMode(YELLOW_GPIO, OUTPUT);

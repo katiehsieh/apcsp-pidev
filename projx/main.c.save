@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <wiringPi.h>
+#include <stdlib.h>
+#include <time.h>
+
+#define BLED_GPIO 17
+#define GLED_GPIO 27
+#define RLED_GPIO 22
+
+int main()
+{
+ //Colors are red(0), green(1), blue(2), yellow(3)
+ //Yellow is red and green 
+
+  time_t t;
+  srand((unsigned) time(&t));
+
+  wiringPiSetupGpio();
+  pinMode(BLED_GPIO, OUTPUT);
+  pinMode(GLED_GPIO, OUTPUT);
+  pinMode(RLED_GPIO, OUTPUT);
+
+  int color;
+  color = rand() % 4;
+  printf("The number is %d\n", color);
+
+ 
+ while(1)
+  {
+    digitalWrite(GLED_GPIO, 50);
+    for(int i=0; i<50; i++) { }
+    digitalWrite(BLED_GPIO, 50);
+    for(int i=0; i<49; i++) { }
+  }
+
+
+  return 0;
+}

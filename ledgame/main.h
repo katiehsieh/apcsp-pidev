@@ -1,6 +1,6 @@
-int button; //button input
-int color; //random RGB
-int score;
+extern int button; //button input
+extern int color; //random RGB
+extern int score;
 
 void readtempfile();
 void writetempfile();
