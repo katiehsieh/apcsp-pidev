@@ -20,8 +20,7 @@ int setrgb()
   time_t t;
   srand((unsigned) time(&t));
 
-  wiringPiSetupGpio();
-
+  wiringPiSetupSys();
   pinMode(BLED_GPIO, OUTPUT);
   pinMode(GLED_GPIO, OUTPUT);
   pinMode(RLED_GPIO, OUTPUT);
@@ -33,7 +32,7 @@ int setrgb()
 //random number from 0 to 3
   readtempfile();
   color = rand() % 4;
-  printf("color: %d\n", color);
+//  printf("color: %d\n", color);
   writetempfile();
   printf("start\n");
   printf("%d\n", score);

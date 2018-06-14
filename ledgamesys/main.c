@@ -30,15 +30,14 @@ int main(int argc, char* argv[]) {
   sscanf(argv[1], "%d", &button);
 
 //  button = atoi(argv[1]);
-  printf("button = %d\n", button);
+//  printf("button = %d\n", button);
 
-  wiringPiSetupGpio();
+  wiringPiSetupSys();
 
-  pinMode(YELLOW_GPIO, OUTPUT);
-  pinMode(RED_GPIO, OUTPUT);
-  pinMode(BLUE_GPIO, OUTPUT);
-  pinMode(GREEN_GPIO, OUTPUT);
-
+//  pinMode(YELLOW_GPIO, OUTPUT);
+//  pinMode(RED_GPIO, OUTPUT);
+//  pinMode(BLUE_GPIO, OUTPUT);
+//  pinMode(GREEN_GPIO, OUTPUT);
 
   if(button < 4) {
 
